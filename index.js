@@ -35,64 +35,78 @@ let message = `/*
     
     `
 
+var code2 = `
+        /*用一个库将markdown变成HTML*/
+`
 
+var introduce =`
+# 自我介绍
+我叫 XXX
+学校毕业
+自学前端半年
 
-var introduce =
-    `# 自我介绍
-         我叫张科家
-        xxx学校毕业
-         自学前端半年时间
-         希望应聘前端开发岗位
-    ## 技能介绍
-        熟悉JavaScript  HTML  CSS
-    ## 项目介绍
-        1.apple轮播
-        2.导航
-        3，简历
-        4，canvas画板
-        5.会动的简历
-        5.一个皮卡丘
-        7.网易云音乐
-        8.vue重构商城
+# 项目介绍
+1. apple轮播
+2. 导航
+3. 简历
+4. canvas画板
+5. 一个皮卡丘
+7. 网易云音乐
+8. vue重构商城
+         
+# 联系方式
+2. XXX 简历      
+- QQ xxxxxxxx
+- Email xxxxxxxx
+- 手机 xxxxxxx
 `
 
 
 
 
 
-writeCode(message, () => {
-    xxx(introduce,()=>{
-       markeddownTohtml()
+writeCode('',message, () => {
+    writeMarkdown(introduce,()=>{
+        writeCode(message,code2,()=>{
+            markeddownTohtml()
+        })
+        
     })
-});
+})
 
-function writeCode(code, fn) {
+function writeCode(prefix,code, fn) {
     let content = document.querySelector('.content')
     let codepaper = document.querySelector('.codepaper')
     let StyleSheet = document.querySelector('.styleSheet')
     let n = 0
     let id = setInterval(() => {
         n += 1
-        content.innerHTML = Prism.highlight(code.slice(0, n), Prism.languages.css);
-        StyleSheet.innerHTML = code.slice(0, n)
+        content.innerHTML = Prism.highlight(prefix + code.slice(0, n), Prism.languages.css);
+        StyleSheet.innerHTML = prefix + code.slice(0, n)
         content.scrollTop = content.scrollHeight
         if (n > code.length) {
             window.clearInterval(id)
-            fn&&fn.call()
+            fn && fn.call()
 
         }
     }, 0)
 }
 
 function markeddownTohtml(fn){
-    let page =document.querySelector('.write')
-    page.innerHTML = marked(introduce)
-    fn&&fn.call()
+    let div =document.createElement('div')
+    div.className = 'html'
+    let page = document.querySelector('.page')
+div.innerHTML  = marked(introduce)
+page.appendChild(div)
+let write =document.querySelector('.write')
+    write.replaceWith(div)
+      fn && fn.call()
+   
 }
 
 
 
-function xxx(code,fn) {
+function writeMarkdown(code,fn) {
     let page =document.querySelector('.page')
     let domwrite = document.createElement('pre')
     domwrite.className = 'write'
@@ -100,7 +114,7 @@ function xxx(code,fn) {
     let n = 0
     let id = setInterval(() => {
         n += 1
-        domwrite.innerHTML = code.slice(0, n)
+        domwrite.innerHTML = code.slice(0,n)
         domwrite.scrollTop = domwrite.scrollHeight
         if (n > introduce.length) {
             window.clearInterval(id)
@@ -108,7 +122,3 @@ function xxx(code,fn) {
         }
     }, 10)
 }
-
-
-
-

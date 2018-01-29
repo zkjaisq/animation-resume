@@ -1,0 +1,62 @@
+*{padding:0;margin:0;}
+*{box-sizing:border-box;}
+*::befor{box-sizing:border-box;}
+*::after{box-sizing:border-box;}
+
+body{height: 100vh;display: flex;justify-content: center;align-items: center;}
+.content{width: 100%;height: 218px;border: 1px solid red;
+margin: 0 auto;position: relative;
+}
+.head{width: 189px;height: 174px;background-color: #00a0e9;border: 2px solid black;
+border-top-left-radius: 48%;
+border-top-right-radius: 50%;
+border-bottom-left-radius: 47%;
+border-bottom-right-radius: 49%;
+position: absolute;top: 0;right: 6px;}
+.face{width: 167px;border: 2px solid black;height: 129px;border-top-left-radius: 47%;
+border-bottom-right-radius: 50%;border-bottom-left-radius: 50%;border-top-right-radius: 47%;position: absolute;top: 45px;right: 5px;transform: rotate(-20deg);background-color: white;}
+.mouse{width: 159px;height: 45px;
+    top: 60px;overflow: hidden;right: 2px;
+    position: absolute;}
+
+    .mouse .mouse-cicle{width: 159px;height: 110px;border: 1px solid black;border-radius: 50%;position: absolute;right: 0;bottom: 0;}
+    .face .nose{border: 1px solid red;
+    width: 30px ;height: 30px ;border-radius: 50%;background-color: red;
+    position: absolute;top: 5px;left: calc(50% - 15px);
+    }
+    .face .nose .samllnose{height: 15px;width: 15px;border-radius: 50%;background-color: white;position: absolute;top: 6px;left: 8px;}
+    .face .line{width: 10px;height: 80px;transform: rotate(0deg);border-right: 2px solid black;position: absolute;top: 25px;left: calc(50% - 8px);
+        border-radius: 50%;
+    }
+    .head .left{width: 40px ;height: 50px;border: 1px solid black;border-radius: 50%;
+        position: absolute;top: 5px;right: 70px;transform: rotate(-25deg);z-index: 1;
+    background-color: white;}
+    .head .right{width: 40px ;height: 50px;border: 1px solid black;border-radius: 50%;position: absolute;top: 22px;left: 37px;transform: rotate(-25deg);z-index: 1;background-color: white;}
+    .head .left .leftcicle{
+        width: 20px;height: 30px;border-radius: 50%;
+        position: absolute;top: 14px ;right: 15px;background-color: black;
+    }
+    .head .right .rightcilce{
+        width: 20px;height: 30px;border-radius: 50%;
+        position: absolute;top: 14px ;left: 15px;background-color: black;
+    }
+    .head .right .rightcilce .smallright{
+        width: 10px;height: 15px;border-radius: 50%;
+        position: absolute;right: 2px;top: 10px;transform: rotate(-9deg);
+        background-color: white;
+    }
+    .head .left .leftcicle .smallleft{
+        width: 10px;height: 15px;border-radius: 50%;
+        position: absolute;left: 2px;top: 10px;transform: rotate(9deg);
+        background-color: white;
+    }
+    .arse{width: 102px;height: 102px;border: 1px solid red;position: absolute;
+    top: 70px;left: 25px;border-radius: 50%;
+    }
+    .tummy{
+        width: 132px;height: 102px;border: 1px solid black;border-radius: 50%;
+        bottom: 15px;position: absolute;
+    }
+    .leg{height: 68px;width: 68px;border-radius: 50%;
+    border: 1px solid blue;bottom: 17px;position: absolute;
+    }
