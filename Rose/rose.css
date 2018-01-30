@@ -1,0 +1,198 @@
+*{padding: 0;margin: 0;}
+*::after{padding: 0;margin: 0;}
+*::before{padding: 0;margin: 0;}
+*{transition: all 0.5s;}
+
+body{height:100vh;display: flex;justify-content: center;align-items: center;background-color: #152237;}
+.contain{height: 300px;
+width: 180px;}
+.glass{margin: 0 auto;
+    height: 262px;width: 153px;
+    border: 3px solid #8a9a9b;
+    border-bottom: 15px solid #8a9a9b;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    position: relative;
+}
+.glass::after{
+    content: '';
+    width: 5px;
+    height: 80px;
+    background-color: #8a9a9b;
+  border-radius: 5px;
+    position: absolute;
+    top: 90px;
+    left: 10px;
+}
+.glass::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 8px;
+    bottom: 65px;left: 10px;
+    background-color: #8a9a9b;
+    border-radius: 5px;
+}
+.glass .roseLeave{
+    width: 4px;height: 155px;
+    background-color: #066406;
+    position: absolute;
+    bottom: 20px;
+    left: 70px;
+}
+.glass .code{
+    width: 50px;height: 30px;background-color: #338f37;
+    position: absolute;top:60px;right:55px;border-radius: 100px;
+}
+.glass .roseLeave > div{
+   border:5px solid transparent;
+    border-right-color: #066406;
+    position: absolute;
+}
+.glass .roseLeave >:nth-child(1){
+    top: 15px;right: 100%;;
+}
+.glass .roseLeave >:nth-child(2){
+    top: 35px;left: 100%;
+    transform: rotate(180deg);
+}
+.glass .roseLeave >:nth-child(3){
+    top: 55px;right: 100%;;
+}
+.glass .roseLeave >:nth-child(4){
+    top: 75px;left: 100%;
+    transform: rotate(180deg);
+}
+.glass .roseLeave >:nth-child(5){
+    top: 95px;right: 100%;;
+}
+.glass .roseLeave >:nth-child(6){
+    top: 115px;left: 100%;
+    transform: rotate(180deg);
+}
+.glass .flower{
+    width: 100px;height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 148, 184,0.47);
+    box-shadow: 0px 0px 10px #f594b8;
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 54px);
+    animation: breath 0.8s linear  infinite alternate;
+}
+.code > div{
+    width: 30px;height: 48px;
+    background-color: #b81b43;
+    position: absolute;
+   bottom: 5px;
+ 
+}
+.code div:nth-child(odd){
+    left: 25px;
+}
+.code div:nth-child(even){
+    right: 25px;
+}
+.code div:nth-child(1){
+    left: 10px;
+    border-radius: 5px;
+}
+.code div:nth-child(2){
+    border-radius: 0px 30px 0px 30px;
+    background-color: rgb(201, 32, 75);
+}
+.code div:nth-child(3){
+    border-radius: 30px 0px 30px 0px;
+    background-color: rgb(201, 32, 75);
+}
+.code div:nth-child(4){
+    transform-origin: bottom right;
+    transform: rotate(-40deg);
+    background-color: rgb(184, 27, 67);
+    border-radius: 0px 30px 0px 30px;
+   
+}
+.code div:nth-child(5){
+    transform-origin: bottom left;
+    transform: rotate(30deg);
+    background-color: rgb(184, 27, 67);
+    border-radius: 30px 0px 30px 0px;
+ 
+}
+.code div:nth-child(6){
+    left: -15px;
+    bottom: -150px;
+    transform-origin: bottom right;
+    transform: rotate(-60deg);
+    background-color: rgb(158, 24, 58);
+    border-radius: 0px 30px 0px 30px;
+   
+  
+}
+.code div:nth-child(7){
+    transform-origin: bottom left;
+    transform: rotate(60deg);
+    background-color: rgb(158, 24, 58);
+    border-radius: 30px 0px 30px 0px;
+}
+
+
+.bubble > div{
+    width: 4px;height:4px;border-radius: 100%;background-color: #ff96c0;
+    box-shadow: 0px 0px 12px 2px #ff4e85;position: absolute;
+    animation: move 4s linear  infinite ;
+    bottom: 0px;
+}
+.bubble > :nth-child(1){
+    left: 80px;
+  
+}
+.bubble > :nth-child(2){
+        left: 50px;
+       
+    }
+    .bubble > :nth-child(3){
+       
+        right: 20px;
+    }
+    .bubble > :nth-child(4){
+        left: 30px;
+        animation-delay: 1s;
+
+    }
+    .bubble > :nth-child(5){
+        right: 59px;
+      
+    }
+    .bubble > :nth-child(6){
+        left: 132px;
+       animation-delay: 2s;
+    }
+    .bubble > :nth-child(7){
+        right: 58px;
+        animation-delay: 1s;
+    }
+    .bubble > :nth-child(8){
+        right: 72px;;
+       
+    }
+    .bubble > :nth-child(9){
+        left: 50px;
+       
+    }
+    .bubble > :nth-child(10){
+        right: 50px;
+        animation-delay: 2s;
+    }
+@keyframes breath{
+    0%{box-shadow: 0px 0px 30px 2px #f594b8;}
+    100%{box-shadow: 0px 0px 10px #f594b8;}
+}
+@keyframes move {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-150px);
+    }
+}
