@@ -23,7 +23,6 @@ let message = `/*
     .token.comment{color: #999;}
 
     /*需要一个写字板*/
-   
     .page{position: fixed;height: 100%;width: 50%;top:0;
         right: 0;}
    
@@ -36,45 +35,49 @@ let message = `/*
     `
 
 var code2 = `
-        /*用一个库将markdown变成HTML*/
+    /*用一个库将markdown变成HTML*/
 `
 
-var introduce =`
-# 自我介绍
+var introduce = `# 自我介绍
+- - - 
 我叫 XXX
-学校毕业
+1990 年 1 月出生
+XXX 学校毕业
 自学前端半年
 
 # 项目介绍
-1. apple轮播
-2. 导航
-3. 简历
-4. canvas画板
-5. 一个皮卡丘
-7. 网易云音乐
-8. vue重构商城
+- - -
+ 1.  apple轮播
+ 2.  导航
+ 3.  简历
+ 4.  canvas画板
+ 5.  一个皮卡丘
+ 7.  网易云音乐
+ 8.  vue重构商城
          
 # 联系方式
-2. XXX 简历      
-- QQ xxxxxxxx
-- Email xxxxxxxx
-- 手机 xxxxxxx
+- - - 
+ *  XXX 简历
+ *  QQ xxxxxxxx
+ *  Email xxxxxxxx
+ *  手机 xxxxxxx
+ 
 `
 
 
 
 
 
-writeCode('',message, () => {
-    writeMarkdown(introduce,()=>{
-        writeCode(message,code2,()=>{
+writeCode('', message, () => {
+    writeMarkdown(introduce, () => {
+        writeCode(message, code2, () => {
             markeddownTohtml()
         })
-        
+
     })
 })
 
-function writeCode(prefix,code, fn) {
+function writeCode(prefix, code, fn) {
     let content = document.querySelector('.content')
     let codepaper = document.querySelector('.codepaper')
     let StyleSheet = document.querySelector('.styleSheet')
@@ -92,33 +95,33 @@ function writeCode(prefix,code, fn) {
     }, 0)
 }
 
-function markeddownTohtml(fn){
-    let div =document.createElement('div')
+function markeddownTohtml(fn) {
+    let div = document.createElement('div')
     div.className = 'html'
     let page = document.querySelector('.page')
-div.innerHTML  = marked(introduce)
-page.appendChild(div)
-let write =document.querySelector('.write')
+    div.innerHTML = marked(introduce)
+    page.appendChild(div)
+    let write = document.querySelector('.write')
     write.replaceWith(div)
-      fn && fn.call()
-   
+    fn && fn.call()
+
 }
 
 
 
-function writeMarkdown(code,fn) {
-    let page =document.querySelector('.page')
+function writeMarkdown(code, fn) {
+    let page = document.querySelector('.page')
     let domwrite = document.createElement('pre')
     domwrite.className = 'write'
     page.appendChild(domwrite)
     let n = 0
     let id = setInterval(() => {
         n += 1
-        domwrite.innerHTML = code.slice(0,n)
+        domwrite.innerHTML = code.slice(0, n)
         domwrite.scrollTop = domwrite.scrollHeight
         if (n > introduce.length) {
             window.clearInterval(id)
-            fn&&fn.call()
+            fn && fn.call()
         }
     }, 10)
 }
