@@ -25,9 +25,8 @@ let message = `/*
 
     /*需要一个写字板*/
     .page{position: fixed;height: 100%;width: 50%;top:0;
-        right: 0;}
+        right: 0;display: flex;align-items: center;justify-content: center;padding: 16px;border-radius: 5px;}
    
-
     /*给写字板也加点3D的特效的吧*/
     .write{transform: perspective(1500px) rotateY(-5deg)}
 
@@ -66,7 +65,7 @@ XXX 学校毕业
  *  手机 xxxxxxx
  
 `
-var style =`
+var style = `
         /*接下来让我们给简历添加点样式的吧*/
         h1{padding: 20px ;font-weight: normal;}
         p{padding: 15px;text-indent:2em;}
@@ -81,8 +80,8 @@ var style =`
 writeCode('', message, () => {
     writeMarkdown(introduce, () => {
         writeCode(message, code2, () => {
-            markeddownTohtml(()=>{
-                writeCode(message+code2,style,()=>{
+            markeddownTohtml(() => {
+                writeCode(message + code2, style, () => {
 
                 })
             })
