@@ -8,7 +8,8 @@ let message = `/*
     html{background:#eee;}
 
     /*给页面加个边框的吧*/
-    .content{border:1px solid #aaa ;padding:2em;}
+    .content{border:1px solid #aaa ;padding:2em;
+    border-radius:5px;}
 
    
     
@@ -31,6 +32,8 @@ let message = `/*
     .write{transform: perspective(1500px) rotateY(-5deg)}
 
     /*下面该开始正式的介绍的了,请看右边的写字板*/
+
+
     
     `
 
@@ -63,15 +66,26 @@ XXX 学校毕业
  *  手机 xxxxxxx
  
 `
+var style =`
+        /*接下来让我们给简历添加点样式的吧*/
+        h1{padding: 20px ;font-weight: normal;}
+        p{padding: 15px;text-indent:2em;}
+        li{padding: 10px;}
+        .page hr{border: none;border-top: 1px solid rgba(0, 0, 0, 0.3);}
+       
 
-
+`
 
 
 
 writeCode('', message, () => {
     writeMarkdown(introduce, () => {
         writeCode(message, code2, () => {
-            markeddownTohtml()
+            markeddownTohtml(()=>{
+                writeCode(message+code2,style,()=>{
+
+                })
+            })
         })
 
     })
