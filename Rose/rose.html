@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>animationRose</title>
     <link rel="stylesheet" href="./rose.css">
+    <style class="styleTag"></style>
 </head>
-<body>
+<body id="body">
+    <pre class="page"></pre>
     <div class="contain">
             <div class="glass">
                     <div class="roseLeave">
@@ -42,7 +44,25 @@
                         </div>
             </div>
     </div>
-   
-   
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+            $(function(){
+                let audio = document.createElement('audio')
+                audio.src = "http://p3gaw11jx.bkt.clouddn.com/a9b0%252F4b0f%252F1058%252F5b59285aaa0dd51dce712ba6cee04f8d.mp3";
+                audio.setAttribute('loop','loop')
+                audio.oncanplay = function(){
+                    audio.play()
+                }
+               audio.addEventListener('click',()=>{
+                        audio.pause()
+                   audio.addEventListener('click',()=>{
+                       audio.play()
+                   })
+                     
+                    })
+                
+            })
+        </script>
+        <script src="./rose.js"></script>
 </html>
