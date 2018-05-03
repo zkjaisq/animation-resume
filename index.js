@@ -1,5 +1,5 @@
 let message = `/*
-    * 面试官你好，我是张科家
+    * 面试官你好，我叫张科家，想面试贵公司的前端工程师岗位
     * 只用文字介绍太单调的，让我们来玩一点炫酷的吧
     * 我就用一些代码来介绍吧。
     */
@@ -42,27 +42,25 @@ var code2 = `
 
 var introduce = `# 自我介绍
 - - - 
-我叫 XXX
+我叫张科家,想面试贵公司的web前端开发过岗位
 1995 年 10 月出生
-XXX 学校毕业
-自学前端半年
+湖北城市建设职业技学院学校毕业
+自学前端，有过半年的工作经验。
 
 # 项目介绍
 - - -
- 1.  apple轮播
- 2.  导航
- 3.  简历
- 4.  canvas画板
- 5.  一个皮卡丘
- 7.  网易云音乐
- 8.  vue重构商城
-         
+ 1.  [apple商城轮播]: http://zkejia.top/pingguo/pingguo.html
+ 2.  [canvas画板]: https://zkjaisq.github.io/canvas/canvas/canvas.html
+ 3.  [个人简历]: https://zkjaisq.github.io/resume2/dist/resume.html
+ 4.  [网易云音乐]: https://zkjaisq.github.io/163music/src/main.html
+ 5.  [简历编辑器]: https://zkjaisq.github.io/Vue_resume/src/index.html
+ 7.  [Rose动画]: https://zkjaisq.github.io/animation-resume/Rose/rose.html
+ 
 # 联系方式
 - - - 
- *  XXX 简历
- *  QQ xxxxxxxx
- *  Email xxxxxxxx
- *  手机 xxxxxxx
+ *  QQ 1551311205
+ *  Email charityjia@gmail.com
+ *  手机 18771964684
  
 `
 var style = `

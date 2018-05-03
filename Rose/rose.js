@@ -143,6 +143,33 @@ display: flex;
     left: calc(50% - 55px);
        
 }
+/*去掉这个玻璃罩的吧*/
+.glass{margin: 0 auto;height: 262px;
+    width: 154px;
+    border-bottom: 15px solid #8a9a9b;
+    border-top-left-radius: 154px;
+    border-top-right-radius: 154px;;
+    position: relative;
+}
+.glass::after{
+    content: '';
+    width: 0px;
+    height: 0px;
+    background-color: #8a9a9b;
+  border-radius: 5px;
+    position: absolute;
+    top: 90px;
+    left: 10px;
+}
+.glass::before{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: 60px;left: 10px;
+    background-color: #8a9a9b;
+    border-radius: 5px;
+}
 
 /*太单调了加点动画的吧*/
 .glass .flower{animation: breath 1s linear  infinite alternate;}
